@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color"
+        content="#0b2d5c">
+
+  <meta name="description"
+        content="Publicidad en InfoZonal - Hacé que tu negocio sea más visible">
+
+  <link rel="manifest"
+        href="manifest.json">
+
+  <title>Publicidad | InfoZonal</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f4f7;
+      color: #111827;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #0b2d5c;
+      color: white;
+
+      padding:
+        calc(14px + env(safe-area-inset-top))
+        15px
+        15px;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow:
+        0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .barra {
+      max-width: 700px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .volver {
+      color: white;
+      text-decoration: none;
+
+      font-size: 30px;
+      line-height: 1;
+
+      width: 38px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .zona {
+      font-size: 12px;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+
+      padding:
+        18px 15px 35px;
+    }
+
+    .encabezado {
+      margin-bottom: 18px;
+    }
+
+    .encabezado h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .encabezado p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .separador {
+      height: 4px;
+      width: 55px;
+
+      background: #c8102e;
+
+      border-radius: 5px;
+
+      margin-top: 10px;
+    }
+
+    .principal {
+      background: #0b2d5c;
+      color: white;
+
+      border-radius: 18px;
+
+      padding: 24px 20px;
+
+      margin-bottom: 16px;
+
+      box-shadow:
+        0 4px 14px rgba(0,0,0,0.12);
+
+      text-align: center;
+    }
+
+    .principal-icono {
+      font-size: 45px;
+
+      margin-bottom: 9px;
+    }
+
+    .principal h2 {
+      font-size: 23px;
+
+      margin-bottom: 8px;
+    }
+
+    .principal p {
+      font-size: 14px;
+
+      line-height: 1.55;
+
+      opacity: 0.95;
+    }
+
+    .planes {
+      display: grid;
+
+      gap: 13px;
+    }
+
+    .plan {
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 19px;
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .plan h2 {
+      font-size: 19px;
+
+      margin-bottom: 7px;
+    }
+
+    .precio {
+      color: #c8102e;
+
+      font-size: 27px;
+
+      font-weight: 900;
+
+      margin-bottom: 9px;
+    }
+
+    .plan p {
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+    }
+
+    .destacado {
+      border:
+        2px solid #c8102e;
+    }
+
+    .etiqueta {
+      display: inline-block;
+
+      background: #c8102e;
+
+      color: white;
+
+      padding: 5px 9px;
+
+      border-radius: 6px;
+
+      font-size: 10px;
+
+      font-weight: bold;
+
+      margin-bottom: 9px;
+
+      text-transform: uppercase;
+    }
+
+    .beneficios {
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 20px;
+
+      margin-top: 16px;
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .beneficios h2 {
+      font-size: 19px;
+
+      margin-bottom: 12px;
+    }
+
+    .beneficio {
+      display: flex;
+
+      gap: 10px;
+
+      margin-bottom: 10px;
+
+      font-size: 14px;
+
+      line-height: 1.4;
+    }
+
+    .beneficio:last-child {
+      margin-bottom: 0;
+    }
+
+    .beneficio-icono {
+      width: 25px;
+      min-width: 25px;
+
+      font-size: 18px;
+    }
+
+    .contacto {
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 22px 18px;
+
+      margin-top: 16px;
+
+      text-align: center;
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .contacto-icono {
+      font-size: 38px;
+
+      margin-bottom: 8px;
+    }
+
+    .contacto h2 {
+      font-size: 20px;
+
+      margin-bottom: 7px;
+    }
+
+    .contacto p {
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+      margin-bottom: 15px;
+    }
+
+    .boton-contacto {
+      display: inline-block;
+
+      background: #0b2d5c;
+
+      color: white;
+
+      text-decoration: none;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      font-size: 14px;
+
+      font-weight: bold;
+    }
+
+    .zona-final {
+      margin-top: 15px;
+
+      text-align: center;
+
+      color: #667085;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+
+      padding:
+        25px 15px;
+
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    @media (min-width: 600px) {
+
+      main {
+        padding-top: 25px;
+      }
+
+      .planes {
+        grid-template-columns:
+          1fr 1fr 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <header>
+
+    <div class="barra">
+
+      <a class="volver"
+         href="index.html">
+        ←
+      </a>
+
+      <div>
+
+        <div class="logo">
+          INFOZONAL
+        </div>
+
+        <div class="zona">
+          San Andrés de Giles y la zona
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <section class="encabezado">
+
+      <h1>
+        📢 Publicidad
+      </h1>
+
+      <p>
+        Hacé que tu negocio sea más visible
+        con InfoZonal.
+      </p>
+
+      <div class="separador"></div>
+
+    </section>
+
+
+    <section class="principal">
+
+      <div class="principal-icono">
+        📣
+      </div>
+
+      <h2>
+        Hacé visible tu negocio
+      </h2>
+
+      <p>
+        Llegá a miles de personas de
+        San Andrés de Giles y las ciudades
+        de nuestra zona.
+      </p>
+
+    </section>
+
+
+    <section class="planes">
+
+
+      <article class="plan">
+
+        <h2>
+          📅 Publicidad semanal
+        </h2>
+
+        <div class="precio">
+          $18.000
+        </div>
+
+        <p>
+          Publicidad durante una semana
+          en los espacios disponibles
+          de InfoZonal.
+        </p>
+
+      </article>
+
+
+      <article class="plan">
+
+        <h2>
+          📆 Publicidad quincenal
+        </h2>
+
+        <div class="precio">
+          $35.000
+        </div>
+
+        <p>
+          Publicidad durante quince días
+          para mantener tu negocio
+          presente en nuestra comunidad.
+        </p>
+
+      </article>
+
+
+      <article class="plan destacado">
+
+        <span class="etiqueta">
+          PROMOCIÓN
+        </span>
+
+        <h2>
+          🗓️ Publicidad mensual
+        </h2>
+
+        <div class="precio">
+          $60.000
+        </div>
+
+        <p>
+          Publicidad durante un mes
+          para darle mayor visibilidad
+          a tu negocio.
+        </p>
+
+      </article>
+
+
+    </section>
+
+
+    <section class="beneficios">
+
+      <h2>
+        📈 ¿Por qué anunciar en InfoZonal?
+      </h2>
+
+
+      <div class="beneficio">
+
+        <div class="beneficio-icono">
+          👀
+        </div>
+
+        <div>
+          Mayor visibilidad para tu negocio.
+        </div>
+
+      </div>
+
+
+      <div class="beneficio">
+
+        <div class="beneficio-icono">
+          📱
+        </div>
+
+        <div>
+          Presencia en nuestros canales digitales.
+        </div>
+
+      </div>
+
+
+      <div class="beneficio">
+
+        <div class="beneficio-icono">
+          📍
+        </div>
+
+        <div>
+          Alcance en San Andrés de Giles
+          y ciudades de la zona.
+        </div>
+
+      </div>
+
+
+      <div class="beneficio">
+
+        <div class="beneficio-icono">
+          📢
+        </div>
+
+        <div>
+          Una forma sencilla de promocionar
+          tus productos o servicios.
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <section class="contacto">
+
+      <div class="contacto-icono">
+        💬
+      </div>
+
+      <h2>
+        ¿Querés publicitar?
+      </h2>
+
+      <p>
+        Comunicate con InfoZonal para consultar
+        disponibilidad y coordinar tu publicidad.
+      </p>
+
+      <a class="boton-contacto"
+         href="https://wa.me/">
+
+        📲 Contactar a InfoZonal
+
+      </a>
+
+    </section>
+
+
+    <div class="zona-final">
+
+      San Andrés de Giles · Luján · Mercedes ·
+      San Antonio de Areco · Carmen de Areco
+
+    </div>
+
+
+  </main>
+
+
+  <footer>
+
+    © 2026 InfoZonal<br>
+    San Andrés de Giles y zona
+
+  </footer>
+
+
+</body>
+
+  </html>
