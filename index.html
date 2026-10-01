@@ -39,6 +39,7 @@
       background: #f2f4f7;
       color: #111827;
       min-height: 100vh;
+      padding-bottom: 78px;
     }
 
     /* ENCABEZADO */
@@ -224,6 +225,70 @@
       line-height: 1.5;
     }
 
+    /* BARRA INFERIOR */
+
+    .barra-navegacion {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #e4e7ec;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      height: 68px;
+
+      padding:
+        6px
+        6px
+        calc(6px + env(safe-area-inset-bottom));
+
+      box-shadow: 0 -3px 14px rgba(0,0,0,0.10);
+    }
+
+    .nav-item {
+      flex: 1;
+      max-width: 120px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 54px;
+
+      color: #667085;
+      text-decoration: none;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      border-radius: 12px;
+    }
+
+    .nav-icono {
+      font-size: 21px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .nav-item.activo {
+      color: #0b2d5c;
+    }
+
+    .nav-item.enviar-nav {
+      color: #c8102e;
+    }
+
+    .nav-item:active {
+      transform: scale(0.95);
+    }
+
     /* PIE */
 
     footer {
@@ -257,6 +322,15 @@
       .boton:first-child,
       .boton:last-child {
         grid-column: 1 / -1;
+      }
+
+      .barra-navegacion {
+        max-width: 720px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 100%;
+        border-radius: 18px 18px 0 0;
       }
 
     }
@@ -497,6 +571,8 @@
   </main>
 
 
+  <!-- PIE -->
+
   <footer>
 
     <strong>INFOZONAL</strong><br>
@@ -506,6 +582,82 @@
     San Andrés de Giles y zona
 
   </footer>
+
+
+  <!-- BARRA INFERIOR -->
+
+  <nav class="barra-navegacion">
+
+    <a class="nav-item activo"
+       href="index.html">
+
+      <span class="nav-icono">
+        🏠
+      </span>
+
+      <span>
+        Inicio
+      </span>
+
+    </a>
+
+
+    <a class="nav-item"
+       href="noticias.html">
+
+      <span class="nav-icono">
+        📰
+      </span>
+
+      <span>
+        Noticias
+      </span>
+
+    </a>
+
+
+    <a class="nav-item"
+       href="clima.html">
+
+      <span class="nav-icono">
+        🌦️
+      </span>
+
+      <span>
+        Clima
+      </span>
+
+    </a>
+
+
+    <a class="nav-item enviar-nav"
+       href="enviar.html">
+
+      <span class="nav-icono">
+        📸
+      </span>
+
+      <span>
+        Enviar
+      </span>
+
+    </a>
+
+
+    <a class="nav-item"
+       href="publicidad.html">
+
+      <span class="nav-icono">
+        📢
+      </span>
+
+      <span>
+        Publicidad
+      </span>
+
+    </a>
+
+  </nav>
 
 
 </body>
