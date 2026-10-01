@@ -1,0 +1,10 @@
+{
+  "name": "InfoZonal",
+  "short_name": "InfoZonal",
+  "description": "Noticias de San Andrés de Giles y la zona",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2f4f7",
+  "theme_color": "#0b2d5c",
+  "lang": "es-AR"
+}
