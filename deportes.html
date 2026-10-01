@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color"
+        content="#0b2d5c">
+
+  <meta name="description"
+        content="Deportes de San Andrés de Giles y la zona - InfoZonal">
+
+  <link rel="manifest"
+        href="manifest.json">
+
+  <title>Deportes | InfoZonal</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f4f7;
+      color: #111827;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #0b2d5c;
+      color: white;
+
+      padding:
+        calc(14px + env(safe-area-inset-top))
+        15px
+        15px;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow:
+        0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .barra {
+      max-width: 700px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .volver {
+      color: white;
+      text-decoration: none;
+
+      font-size: 30px;
+      line-height: 1;
+
+      width: 38px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .zona {
+      font-size: 12px;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+
+      padding:
+        18px 15px 35px;
+    }
+
+    .encabezado {
+      margin-bottom: 18px;
+    }
+
+    .encabezado h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .encabezado p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .separador {
+      height: 4px;
+      width: 55px;
+
+      background: #c8102e;
+
+      border-radius: 5px;
+
+      margin-top: 10px;
+    }
+
+    .categorias {
+      display: grid;
+      gap: 12px;
+    }
+
+    .categoria {
+      background: white;
+
+      border-radius: 15px;
+
+      padding: 17px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .icono {
+      width: 54px;
+      min-width: 54px;
+
+      height: 54px;
+
+      border-radius: 13px;
+
+      background: #eef3f9;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 29px;
+    }
+
+    .categoria h2 {
+      font-size: 17px;
+
+      margin-bottom: 4px;
+    }
+
+    .categoria p {
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.45;
+    }
+
+    .destacado {
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 20px;
+
+      margin-bottom: 14px;
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.08);
+
+      border-left:
+        5px solid #c8102e;
+    }
+
+    .destacado-icono {
+      font-size: 40px;
+
+      margin-bottom: 8px;
+    }
+
+    .destacado h2 {
+      font-size: 20px;
+
+      margin-bottom: 7px;
+    }
+
+    .destacado p {
+      color: #4b5563;
+
+      font-size: 14px;
+
+      line-height: 1.5;
+    }
+
+    .proximamente {
+      background: white;
+
+      border-radius: 15px;
+
+      padding: 20px;
+
+      margin-top: 16px;
+
+      text-align: center;
+
+      box-shadow:
+        0 2px 9px rgba(0,0,0,0.06);
+    }
+
+    .proximamente-icono {
+      font-size: 38px;
+
+      margin-bottom: 8px;
+    }
+
+    .proximamente h3 {
+      font-size: 18px;
+
+      margin-bottom: 6px;
+    }
+
+    .proximamente p {
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+
+      padding:
+        25px 15px;
+
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    @media (min-width: 600px) {
+
+      main {
+        padding-top: 25px;
+      }
+
+      .categorias {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <header>
+
+    <div class="barra">
+
+      <a class="volver"
+         href="index.html">
+        ←
+      </a>
+
+      <div>
+
+        <div class="logo">
+          INFOZONAL
+        </div>
+
+        <div class="zona">
+          San Andrés de Giles y la zona
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <section class="encabezado">
+
+      <h1>
+        ⚽ Deportes
+      </h1>
+
+      <p>
+        Toda la información deportiva de
+        San Andrés de Giles, Luján, Mercedes,
+        San Antonio de Areco y Carmen de Areco.
+      </p>
+
+      <div class="separador"></div>
+
+    </section>
+
+
+    <article class="destacado">
+
+      <div class="destacado-icono">
+        🏆
+      </div>
+
+      <h2>
+        Deportes de nuestra zona
+      </h2>
+
+      <p>
+        Resultados, partidos, torneos,
+        equipos, clubes, atletas y todas
+        las novedades deportivas de la región.
+      </p>
+
+    </article>
+
+
+    <section class="categorias">
+
+
+      <article class="categoria">
+
+        <div class="icono">
+          ⚽
+        </div>
+
+        <div>
+
+          <h2>
+            Fútbol
+          </h2>
+
+          <p>
+            Partidos, resultados, equipos,
+            torneos y noticias del fútbol local.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="categoria">
+
+        <div class="icono">
+          🏀
+        </div>
+
+        <div>
+
+          <h2>
+            Básquet
+          </h2>
+
+          <p>
+            Información de clubes, partidos
+            y competencias de básquet.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="categoria">
+
+        <div class="icono">
+          🏐
+        </div>
+
+        <div>
+
+          <h2>
+            Vóley
+          </h2>
+
+          <p>
+            Torneos, equipos y resultados
+            del vóley de la zona.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="categoria">
+
+        <div class="icono">
+          🏃
+        </div>
+
+        <div>
+
+          <h2>
+            Atletismo
+          </h2>
+
+          <p>
+            Carreras, competencias y atletas
+            de nuestra región.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="categoria">
+
+        <div class="icono">
+          🥋
+        </div>
+
+        <div>
+
+          <h2>
+            Artes marciales
+          </h2>
+
+          <p>
+            Competencias, escuelas y deportistas
+            de distintas disciplinas.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="categoria">
+
+        <div class="icono">
+          🏇
+        </div>
+
+        <div>
+
+          <h2>
+            Deportes ecuestres
+          </h2>
+
+          <p>
+            Polo, equitación y actividades
+            ecuestres de la zona.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+
+    <section class="proximamente">
+
+      <div class="proximamente-icono">
+        🏆
+      </div>
+
+      <h3>
+        Próximamente más información
+      </h3>
+
+      <p>
+        Las noticias y resultados deportivos
+        aparecerán aquí.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    © 2026 InfoZonal<br>
+    San Andrés de Giles y zona
+
+  </footer>
+
+
+</body>
+
+  </html>
