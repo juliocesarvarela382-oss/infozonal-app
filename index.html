@@ -41,86 +41,124 @@
       min-height: 100vh;
     }
 
+    /* ENCABEZADO */
+
     header {
       background: #0b2d5c;
       color: white;
-
       padding:
-        calc(18px + env(safe-area-inset-top))
+        calc(16px + env(safe-area-inset-top))
         16px
-        20px;
-
+        22px;
       text-align: center;
     }
 
-    .logo-texto {
-      font-size: 34px;
+    .logo {
+      font-size: 38px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+    }
+
+    .linea-roja {
+      width: 65px;
+      height: 4px;
+      background: #c8102e;
+      margin: 8px auto 7px;
+      border-radius: 10px;
     }
 
     .subtitulo {
-      margin-top: 5px;
-      font-size: 15px;
+      font-size: 14px;
       opacity: 0.95;
     }
 
+    /* CONTENIDO */
+
     main {
       width: 100%;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
-      padding: 18px 15px 30px;
+      padding: 16px 14px 30px;
     }
 
-    .bienvenida {
+    /* PRESENTACIÓN */
+
+    .presentacion {
       background: white;
-      border-radius: 16px;
-      padding: 18px;
-      margin-bottom: 16px;
-
-      box-shadow:
-        0 3px 12px rgba(0,0,0,0.07);
+      border-radius: 17px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
     }
 
-    .bienvenida h2 {
-      font-size: 21px;
-      margin-bottom: 6px;
+    .presentacion h1 {
+      font-size: 23px;
+      margin-bottom: 8px;
     }
 
-    .bienvenida p {
+    .presentacion p {
       color: #667085;
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
+
+    /* COBERTURA */
+
+    .cobertura {
+      background: #0b2d5c;
+      color: white;
+      border-radius: 17px;
+      padding: 18px;
+      margin-bottom: 17px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+    }
+
+    .cobertura h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .ciudades {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .ciudad {
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    /* TÍTULO SECCIONES */
+
+    .titulo-seccion {
+      font-size: 20px;
+      margin: 5px 3px 11px;
+      color: #111827;
+    }
+
+    /* MENÚ */
 
     .menu {
       display: grid;
-      gap: 11px;
+      gap: 10px;
     }
 
     .boton {
       display: flex;
       align-items: center;
-
-      min-height: 64px;
-
-      padding: 14px 17px;
-
+      min-height: 67px;
+      padding: 12px 15px;
       background: white;
-
-      border-radius: 14px;
-
+      border-radius: 15px;
       color: #111827;
-
       text-decoration: none;
-
-      font-size: 17px;
-
+      font-size: 16px;
       font-weight: 700;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.07);
-
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
       transition:
         transform 0.12s ease,
         box-shadow 0.12s ease;
@@ -131,18 +169,19 @@
     }
 
     .boton:hover {
-      box-shadow:
-        0 4px 12px rgba(0,0,0,0.10);
+      box-shadow: 0 4px 13px rgba(0,0,0,0.11);
     }
 
     .icono {
-      width: 42px;
-      min-width: 42px;
-
-      font-size: 25px;
-
-      text-align: center;
-
+      width: 43px;
+      min-width: 43px;
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f4f7;
+      border-radius: 12px;
+      font-size: 24px;
       margin-right: 12px;
     }
 
@@ -151,31 +190,64 @@
       color: white;
     }
 
+    .destacado .icono {
+      background: rgba(255,255,255,0.16);
+    }
+
     .enviar {
       background: #0b2d5c;
       color: white;
     }
 
+    .enviar .icono {
+      background: rgba(255,255,255,0.14);
+    }
+
+    /* INFORMACIÓN */
+
+    .informacion {
+      background: white;
+      border-radius: 17px;
+      padding: 18px;
+      margin-top: 17px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .informacion h2 {
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .informacion p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* PIE */
+
     footer {
       text-align: center;
-
       padding: 25px 15px;
-
       color: #667085;
-
       font-size: 13px;
-
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
+    footer strong {
+      color: #0b2d5c;
+    }
+
+    /* TABLET / PC */
 
     @media (min-width: 600px) {
 
-      .logo-texto {
-        font-size: 40px;
+      .logo {
+        font-size: 44px;
       }
 
       main {
-        padding-top: 25px;
+        padding-top: 24px;
       }
 
       .menu {
@@ -190,16 +262,20 @@
     }
 
   </style>
-</head>
 
+</head>
 
 <body>
 
+  <!-- ENCABEZADO -->
+
   <header>
 
-    <div class="logo-texto">
+    <div class="logo">
       INFOZONAL
     </div>
+
+    <div class="linea-roja"></div>
 
     <div class="subtitulo">
       Noticias de Giles y la zona
@@ -210,14 +286,16 @@
 
   <main>
 
-    <section class="bienvenida">
+    <!-- PRESENTACIÓN -->
 
-      <h2>
+    <section class="presentacion">
+
+      <h1>
         📰 Información al instante
-      </h2>
+      </h1>
 
       <p>
-        Noticias, información y actualidad de
+        Noticias, actualidad y servicios de
         San Andrés de Giles y las ciudades
         de nuestra zona.
       </p>
@@ -225,10 +303,50 @@
     </section>
 
 
+    <!-- COBERTURA -->
+
+    <section class="cobertura">
+
+      <h2>
+        📍 Nuestra cobertura
+      </h2>
+
+      <div class="ciudades">
+
+        <span class="ciudad">
+          San Andrés de Giles
+        </span>
+
+        <span class="ciudad">
+          Luján
+        </span>
+
+        <span class="ciudad">
+          Mercedes
+        </span>
+
+        <span class="ciudad">
+          San Antonio de Areco
+        </span>
+
+        <span class="ciudad">
+          Carmen de Areco
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECCIONES -->
+
+    <h2 class="titulo-seccion">
+      📱 Secciones
+    </h2>
+
+
     <section class="menu">
 
-
-      <!-- ÚLTIMAS NOTICIAS -->
 
       <a class="boton destacado"
          href="noticias.html">
@@ -244,8 +362,6 @@
       </a>
 
 
-      <!-- POLICIALES -->
-
       <a class="boton"
          href="policiales.html">
 
@@ -259,8 +375,6 @@
 
       </a>
 
-
-      <!-- BOMBEROS -->
 
       <a class="boton"
          href="bomberos.html">
@@ -276,8 +390,6 @@
       </a>
 
 
-      <!-- CLIMA -->
-
       <a class="boton"
          href="clima.html">
 
@@ -291,8 +403,6 @@
 
       </a>
 
-
-      <!-- AVISOS FÚNEBRES -->
 
       <a class="boton"
          href="avisos.html">
@@ -308,8 +418,6 @@
       </a>
 
 
-      <!-- INFORMACIÓN LOCAL -->
-
       <a class="boton"
          href="local.html">
 
@@ -323,8 +431,6 @@
 
       </a>
 
-
-      <!-- DEPORTES -->
 
       <a class="boton"
          href="deportes.html">
@@ -340,8 +446,6 @@
       </a>
 
 
-      <!-- PUBLICIDAD -->
-
       <a class="boton"
          href="publicidad.html">
 
@@ -355,8 +459,6 @@
 
       </a>
 
-
-      <!-- ENVIAR UNA NOTICIA -->
 
       <a class="boton enviar"
          href="enviar.html">
@@ -374,10 +476,30 @@
 
     </section>
 
+
+    <!-- INFORMACIÓN FINAL -->
+
+    <section class="informacion">
+
+      <h2>
+        📢 Somos InfoZonal
+      </h2>
+
+      <p>
+        Información local, noticias y acontecimientos
+        de nuestra comunidad.
+        Seguinos y mantenete informado.
+      </p>
+
+    </section>
+
+
   </main>
 
 
   <footer>
+
+    <strong>INFOZONAL</strong><br>
 
     © 2026 InfoZonal<br>
 
