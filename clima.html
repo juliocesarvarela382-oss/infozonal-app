@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color"
+        content="#0b2d5c">
+
+  <meta name="description"
+        content="Clima de San Andrés de Giles, Luján, Mercedes, San Antonio de Areco y Carmen de Areco">
+
+  <link rel="manifest"
+        href="manifest.json">
+
+  <title>Clima | InfoZonal</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f4f7;
+      color: #111827;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #0b2d5c;
+      color: white;
+
+      padding:
+        calc(14px + env(safe-area-inset-top))
+        15px
+        15px;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow:
+        0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .barra {
+      max-width: 700px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .volver {
+      color: white;
+      text-decoration: none;
+
+      font-size: 30px;
+      line-height: 1;
+
+      width: 38px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .zona {
+      font-size: 12px;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+
+      padding:
+        18px 15px 35px;
+    }
+
+    .encabezado {
+      margin-bottom: 18px;
+    }
+
+    .encabezado h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .encabezado p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .separador {
+      height: 4px;
+      width: 55px;
+
+      background: #c8102e;
+
+      border-radius: 5px;
+
+      margin-top: 10px;
+    }
+
+    .actualizacion {
+      background: white;
+
+      border-radius: 12px;
+
+      padding: 12px 14px;
+
+      margin-bottom: 15px;
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.06);
+
+      color: #667085;
+
+      font-size: 12px;
+
+      text-align: center;
+    }
+
+    .ciudades {
+      display: grid;
+      gap: 14px;
+    }
+
+    .ciudad {
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 17px;
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .nombre-ciudad {
+      font-size: 20px;
+      font-weight: 800;
+
+      margin-bottom: 12px;
+    }
+
+    .clima-principal {
+      display: flex;
+      align-items: center;
+
+      gap: 15px;
+
+      margin-bottom: 13px;
+    }
+
+    .icono-clima {
+      width: 70px;
+      min-width: 70px;
+
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 48px;
+
+      background: #eef5ff;
+
+      border-radius: 50%;
+    }
+
+    .temperatura {
+      font-size: 34px;
+      font-weight: 900;
+
+      line-height: 1;
+    }
+
+    .descripcion {
+      margin-top: 5px;
+
+      color: #667085;
+
+      font-size: 13px;
+    }
+
+    .datos-clima {
+      border-top: 1px solid #e5e7eb;
+
+      padding-top: 12px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 9px;
+    }
+
+    .dato {
+      background: #f8fafc;
+
+      border-radius: 9px;
+
+      padding: 9px;
+
+      font-size: 12px;
+
+      color: #4b5563;
+    }
+
+    .dato strong {
+      display: block;
+
+      color: #111827;
+
+      font-size: 13px;
+
+      margin-top: 2px;
+    }
+
+    .nota {
+      background: white;
+
+      border-radius: 15px;
+
+      padding: 18px;
+
+      margin-top: 16px;
+
+      box-shadow:
+        0 2px 9px rgba(0,0,0,0.06);
+    }
+
+    .nota h3 {
+      font-size: 17px;
+
+      margin-bottom: 7px;
+    }
+
+    .nota p {
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+
+      padding:
+        25px 15px;
+
+      color: #667085;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    @media (min-width: 600px) {
+
+      main {
+        padding-top: 25px;
+      }
+
+      .ciudades {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .ciudad:first-child {
+        grid-column:
+          1 / -1;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <header>
+
+    <div class="barra">
+
+      <a class="volver"
+         href="index.html">
+        ←
+      </a>
+
+      <div>
+
+        <div class="logo">
+          INFOZONAL
+        </div>
+
+        <div class="zona">
+          San Andrés de Giles y la zona
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <section class="encabezado">
+
+      <h1>
+        🌦️ Clima
+      </h1>
+
+      <p>
+        Información meteorológica de las cinco
+        ciudades de cobertura de InfoZonal.
+      </p>
+
+      <div class="separador"></div>
+
+    </section>
+
+
+    <div class="actualizacion">
+
+      🌐 Información meteorológica de InfoZonal
+
+    </div>
+
+
+    <section class="ciudades">
+
+
+      <!-- SAN ANDRÉS DE GILES -->
+
+      <article class="ciudad">
+
+        <div class="nombre-ciudad">
+          📍 San Andrés de Giles
+        </div>
+
+        <div class="clima-principal">
+
+          <div class="icono-clima">
+            🌤️
+          </div>
+
+          <div>
+
+            <div class="temperatura">
+              --°C
+            </div>
+
+            <div class="descripcion">
+              Información meteorológica
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="datos-clima">
+
+          <div class="dato">
+            🌡️ Sensación
+            <strong>--°C</strong>
+          </div>
+
+          <div class="dato">
+            💧 Humedad
+            <strong>--%</strong>
+          </div>
+
+          <div class="dato">
+            💨 Viento
+            <strong>-- km/h</strong>
+          </div>
+
+          <div class="dato">
+            🌧️ Precipitación
+            <strong>-- mm</strong>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- LUJÁN -->
+
+      <article class="ciudad">
+
+        <div class="nombre-ciudad">
+          📍 Luján
+        </div>
+
+        <div class="clima-principal">
+
+          <div class="icono-clima">
+            🌤️
+          </div>
+
+          <div>
+
+            <div class="temperatura">
+              --°C
+            </div>
+
+            <div class="descripcion">
+              Información meteorológica
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="datos-clima">
+
+          <div class="dato">
+            🌡️ Sensación
+            <strong>--°C</strong>
+          </div>
+
+          <div class="dato">
+            💧 Humedad
+            <strong>--%</strong>
+          </div>
+
+          <div class="dato">
+            💨 Viento
+            <strong>-- km/h</strong>
+          </div>
+
+          <div class="dato">
+            🌧️ Precipitación
+            <strong>-- mm</strong>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MERCEDES -->
+
+      <article class="ciudad">
+
+        <div class="nombre-ciudad">
+          📍 Mercedes
+        </div>
+
+        <div class="clima-principal">
+
+          <div class="icono-clima">
+            🌤️
+          </div>
+
+          <div>
+
+            <div class="temperatura">
+              --°C
+            </div>
+
+            <div class="descripcion">
+              Información meteorológica
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="datos-clima">
+
+          <div class="dato">
+            🌡️ Sensación
+            <strong>--°C</strong>
+          </div>
+
+          <div class="dato">
+            💧 Humedad
+            <strong>--%</strong>
+          </div>
+
+          <div class="dato">
+            💨 Viento
+            <strong>-- km/h</strong>
+          </div>
+
+          <div class="dato">
+            🌧️ Precipitación
+            <strong>-- mm</strong>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SAN ANTONIO DE ARECO -->
+
+      <article class="ciudad">
+
+        <div class="nombre-ciudad">
+          📍 San Antonio de Areco
+        </div>
+
+        <div class="clima-principal">
+
+          <div class="icono-clima">
+            🌤️
+          </div>
+
+          <div>
+
+            <div class="temperatura">
+              --°C
+            </div>
+
+            <div class="descripcion">
+              Información meteorológica
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="datos-clima">
+
+          <div class="dato">
+            🌡️ Sensación
+            <strong>--°C</strong>
+          </div>
+
+          <div class="dato">
+            💧 Humedad
+            <strong>--%</strong>
+          </div>
+
+          <div class="dato">
+            💨 Viento
+            <strong>-- km/h</strong>
+          </div>
+
+          <div class="dato">
+            🌧️ Precipitación
+            <strong>-- mm</strong>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CARMEN DE ARECO -->
+
+      <article class="ciudad">
+
+        <div class="nombre-ciudad">
+          📍 Carmen de Areco
+        </div>
+
+        <div class="clima-principal">
+
+          <div class="icono-clima">
+            🌤️
+          </div>
+
+          <div>
+
+            <div class="temperatura">
+              --°C
+            </div>
+
+            <div class="descripcion">
+              Información meteorológica
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="datos-clima">
+
+          <div class="dato">
+            🌡️ Sensación
+            <strong>--°C</strong>
+          </div>
+
+          <div class="dato">
+            💧 Humedad
+            <strong>--%</strong>
+          </div>
+
+          <div class="dato">
+            💨 Viento
+            <strong>-- km/h</strong>
+          </div>
+
+          <div class="dato">
+            🌧️ Precipitación
+            <strong>-- mm</strong>
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+
+    <section class="nota">
+
+      <h3>
+        🌦️ Clima InfoZonal
+      </h3>
+
+      <p>
+        Esta sección mostrará la información
+        meteorológica de San Andrés de Giles,
+        Luján, Mercedes, San Antonio de Areco
+        y Carmen de Areco.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    © 2026 InfoZonal<br>
+    San Andrés de Giles y zona
+
+  </footer>
+
+
+</body>
+
+</html>
