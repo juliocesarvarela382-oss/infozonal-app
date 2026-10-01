@@ -7,9 +7,13 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <meta name="theme-color" content="#0b2d5c">
+
   <meta name="mobile-web-app-capable" content="yes">
+
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
 
   <meta name="description"
         content="InfoZonal - Noticias de San Andrés de Giles y la zona">
@@ -19,6 +23,7 @@
   <title>InfoZonal</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -39,10 +44,12 @@
     header {
       background: #0b2d5c;
       color: white;
+
       padding:
         calc(18px + env(safe-area-inset-top))
         16px
         20px;
+
       text-align: center;
     }
 
@@ -70,7 +77,9 @@
       border-radius: 16px;
       padding: 18px;
       margin-bottom: 16px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+
+      box-shadow:
+        0 3px 12px rgba(0,0,0,0.07);
     }
 
     .bienvenida h2 {
@@ -92,27 +101,48 @@
     .boton {
       display: flex;
       align-items: center;
+
       min-height: 64px;
+
       padding: 14px 17px;
+
       background: white;
+
       border-radius: 14px;
+
       color: #111827;
+
       text-decoration: none;
+
       font-size: 17px;
+
       font-weight: 700;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      transition: transform 0.12s ease;
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.07);
+
+      transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
     }
 
     .boton:active {
       transform: scale(0.98);
     }
 
+    .boton:hover {
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.10);
+    }
+
     .icono {
       width: 42px;
       min-width: 42px;
+
       font-size: 25px;
+
       text-align: center;
+
       margin-right: 12px;
     }
 
@@ -128,9 +158,13 @@
 
     footer {
       text-align: center;
+
       padding: 25px 15px;
+
       color: #667085;
+
       font-size: 13px;
+
       line-height: 1.6;
     }
 
@@ -152,83 +186,104 @@
       .boton:last-child {
         grid-column: 1 / -1;
       }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
   <header>
-    <div class="logo-texto">INFOZONAL</div>
-    <div class="subtitulo">Noticias de Giles y la zona</div>
+
+    <div class="logo-texto">
+      INFOZONAL
+    </div>
+
+    <div class="subtitulo">
+      Noticias de Giles y la zona
+    </div>
+
   </header>
+
 
   <main>
 
     <section class="bienvenida">
-      <h2>📰 Información al instante</h2>
+
+      <h2>
+        📰 Información al instante
+      </h2>
 
       <p>
         Noticias, información y actualidad de
-        San Andrés de Giles y las ciudades de nuestra zona.
+        San Andrés de Giles y las ciudades
+        de nuestra zona.
       </p>
+
     </section>
+
 
     <section class="menu">
 
-      <a class="boton destacado" href="noticias.html">
-        <span class="icono">📰</span>
-        <span>Últimas noticias</span>
+
+      <!-- ÚLTIMAS NOTICIAS -->
+
+      <a class="boton destacado"
+         href="noticias.html">
+
+        <span class="icono">
+          📰
+        </span>
+
+        <span>
+          Últimas noticias
+        </span>
+
       </a>
 
-      <a class="boton" href="#">
-        <span class="icono">🚨</span>
-        <span>Policiales</span>
+
+      <!-- POLICIALES -->
+
+      <a class="boton"
+         href="policiales.html">
+
+        <span class="icono">
+          🚨
+        </span>
+
+        <span>
+          Policiales
+        </span>
+
       </a>
 
-      <a class="boton" href="#">
-        <span class="icono">🚒</span>
-        <span>Bomberos</span>
+
+      <!-- BOMBEROS -->
+
+      <a class="boton"
+         href="bomberos.html">
+
+        <span class="icono">
+          🚒
+        </span>
+
+        <span>
+          Bomberos
+        </span>
+
       </a>
 
-      <a class="boton" href="#">
-        <span class="icono">🌦️</span>
-        <span>Clima</span>
-      </a>
 
-      <a class="boton" href="#">
-        <span class="icono">🕊️</span>
-        <span>Avisos fúnebres</span>
-      </a>
+      <!-- CLIMA -->
 
-      <a class="boton" href="#">
-        <span class="icono">🏛️</span>
-        <span>Información local</span>
-      </a>
+      <a class="boton"
+         href="clima.html">
 
-      <a class="boton" href="#">
-        <span class="icono">⚽</span>
-        <span>Deportes</span>
-      </a>
+        <span class="icono">
+          🌦️
+        </span>
 
-      <a class="boton" href="#">
-        <span class="icono">📢</span>
-        <span>Publicidad</span>
-      </a>
-
-      <a class="boton enviar" href="#">
-        <span class="icono">📸</span>
-        <span>Enviar una noticia</span>
-      </a>
-
-    </section>
-
-  </main>
-
-  <footer>
-    © 2026 InfoZonal<br>
-    San Andrés de Giles y zona
-  </footer>
-
-</body>
-</html>
+        <span>
+         
