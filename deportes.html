@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <meta name="theme-color"
-        content="#0b2d5c">
+  <meta name="theme-color" content="#0b2d5c">
 
   <meta name="description"
-        content="Deportes de San Andrés de Giles y la zona - InfoZonal">
+        content="InfoZonal Deportes - Fútbol, automovilismo y Fórmula 1">
 
-  <link rel="manifest"
-        href="manifest.json">
-
-  <title>Deportes | InfoZonal</title>
+  <title>Deportes - InfoZonal</title>
 
   <style>
 
@@ -34,235 +28,203 @@
       min-height: 100vh;
     }
 
+    /* ENCABEZADO */
+
     header {
       background: #0b2d5c;
       color: white;
-
       padding:
-        calc(14px + env(safe-area-inset-top))
-        15px
-        15px;
-
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      box-shadow:
-        0 2px 10px rgba(0,0,0,0.15);
-    }
-
-    .barra {
-      max-width: 700px;
-      margin: auto;
-
-      display: flex;
-      align-items: center;
-
-      gap: 12px;
+        calc(16px + env(safe-area-inset-top))
+        16px
+        22px;
+      text-align: center;
     }
 
     .volver {
+      display: block;
+      text-align: left;
       color: white;
       text-decoration: none;
-
-      font-size: 30px;
-      line-height: 1;
-
-      width: 38px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
     }
 
     .logo {
-      font-size: 27px;
+      font-size: 36px;
       font-weight: 900;
       letter-spacing: 1px;
     }
 
-    .zona {
-      font-size: 12px;
-      opacity: 0.9;
-      margin-top: 2px;
+    .linea-roja {
+      width: 60px;
+      height: 4px;
+      background: #c8102e;
+      margin: 8px auto;
+      border-radius: 10px;
     }
+
+    .subtitulo {
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    /* CONTENIDO */
 
     main {
       width: 100%;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
-
-      padding:
-        18px 15px 35px;
+      padding: 18px 15px 35px;
     }
 
-    .encabezado {
-      margin-bottom: 18px;
+    .introduccion {
+      background: white;
+      border-radius: 17px;
+      padding: 20px;
+      margin-bottom: 17px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
     }
 
-    .encabezado h1 {
-      font-size: 24px;
-      margin-bottom: 6px;
+    .introduccion h1 {
+      font-size: 25px;
+      margin-bottom: 8px;
     }
 
-    .encabezado p {
+    .introduccion p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* SECCIONES */
+
+    .seccion {
+      background: white;
+      border-radius: 17px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .seccion h2 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .seccion p {
       color: #667085;
       font-size: 14px;
       line-height: 1.5;
+      margin-bottom: 13px;
     }
 
-    .separador {
-      height: 4px;
-      width: 55px;
+    /* SUBCATEGORÍAS */
 
-      background: #c8102e;
-
-      border-radius: 5px;
-
-      margin-top: 10px;
-    }
-
-    .categorias {
+    .subcategorias {
       display: grid;
-      gap: 12px;
+      gap: 9px;
     }
 
-    .categoria {
-      background: white;
-
-      border-radius: 15px;
-
-      padding: 17px;
-
+    .subcategoria {
       display: flex;
       align-items: center;
+      background: #f2f4f7;
+      border-radius: 12px;
+      padding: 13px;
+      color: #111827;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
 
-      gap: 14px;
-
-      box-shadow:
-        0 3px 12px rgba(0,0,0,0.07);
+    .subcategoria:hover {
+      background: #e8ebef;
     }
 
     .icono {
-      width: 54px;
-      min-width: 54px;
-
-      height: 54px;
-
-      border-radius: 13px;
-
-      background: #eef3f9;
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      font-size: 29px;
-    }
-
-    .categoria h2 {
-      font-size: 17px;
-
-      margin-bottom: 4px;
-    }
-
-    .categoria p {
-      color: #667085;
-
-      font-size: 13px;
-
-      line-height: 1.45;
-    }
-
-    .destacado {
       background: white;
+      border-radius: 10px;
 
-      border-radius: 16px;
+      font-size: 22px;
+      margin-right: 11px;
+    }
 
+    /* AUTOMOVILISMO */
+
+    .automovilismo {
+      border-top: 5px solid #111827;
+    }
+
+    /* FORMULA 1 */
+
+    .formula1 {
+      border-top: 5px solid #c8102e;
+    }
+
+    .formula1 .icono {
+      background: #c8102e;
+      color: white;
+    }
+
+    /* PRÓXIMAMENTE */
+
+    .proximamente {
+      text-align: center;
+      background: #0b2d5c;
+      color: white;
+      border-radius: 17px;
       padding: 20px;
-
-      margin-bottom: 14px;
-
-      box-shadow:
-        0 3px 12px rgba(0,0,0,0.08);
-
-      border-left:
-        5px solid #c8102e;
+      margin-top: 18px;
     }
 
-    .destacado-icono {
-      font-size: 40px;
-
-      margin-bottom: 8px;
-    }
-
-    .destacado h2 {
-      font-size: 20px;
-
+    .proximamente h2 {
+      font-size: 19px;
       margin-bottom: 7px;
     }
 
-    .destacado p {
-      color: #4b5563;
-
-      font-size: 14px;
-
-      line-height: 1.5;
-    }
-
-    .proximamente {
-      background: white;
-
-      border-radius: 15px;
-
-      padding: 20px;
-
-      margin-top: 16px;
-
-      text-align: center;
-
-      box-shadow:
-        0 2px 9px rgba(0,0,0,0.06);
-    }
-
-    .proximamente-icono {
-      font-size: 38px;
-
-      margin-bottom: 8px;
-    }
-
-    .proximamente h3 {
-      font-size: 18px;
-
-      margin-bottom: 6px;
-    }
-
     .proximamente p {
-      color: #667085;
-
-      font-size: 13px;
-
+      font-size: 14px;
       line-height: 1.5;
+      opacity: 0.92;
     }
+
+    /* PIE */
 
     footer {
       text-align: center;
-
-      padding:
-        25px 15px;
-
+      padding: 25px 15px;
       color: #667085;
-
       font-size: 13px;
-
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
+    footer strong {
+      color: #0b2d5c;
+    }
+
+    /* TABLET */
+
     @media (min-width: 600px) {
+
+      .logo {
+        font-size: 42px;
+      }
 
       main {
         padding-top: 25px;
       }
 
-      .categorias {
-        grid-template-columns:
-          1fr 1fr;
+      .subcategorias {
+        grid-template-columns: 1fr 1fr;
       }
 
     }
@@ -271,31 +233,25 @@
 
 </head>
 
-
 <body>
 
+  <!-- ENCABEZADO -->
 
   <header>
 
-    <div class="barra">
+    <a class="volver"
+       href="index.html">
+      ← Volver a InfoZonal
+    </a>
 
-      <a class="volver"
-         href="index.html">
-        ←
-      </a>
+    <div class="logo">
+      INFOZONAL
+    </div>
 
-      <div>
+    <div class="linea-roja"></div>
 
-        <div class="logo">
-          INFOZONAL
-        </div>
-
-        <div class="zona">
-          San Andrés de Giles y la zona
-        </div>
-
-      </div>
-
+    <div class="subtitulo">
+      Noticias de Giles y la zona
     </div>
 
   </header>
@@ -303,210 +259,183 @@
 
   <main>
 
+    <!-- INTRODUCCIÓN -->
 
-    <section class="encabezado">
+    <section class="introduccion">
 
       <h1>
         ⚽ Deportes
       </h1>
 
       <p>
-        Toda la información deportiva de
-        San Andrés de Giles, Luján, Mercedes,
-        San Antonio de Areco y Carmen de Areco.
+        Toda la información deportiva que
+        interesa a nuestra comunidad:
+        fútbol, selecciones, automovilismo
+        y Fórmula 1.
       </p>
-
-      <div class="separador"></div>
 
     </section>
 
 
-    <article class="destacado">
+    <!-- FÚTBOL -->
 
-      <div class="destacado-icono">
-        🏆
-      </div>
+    <section class="seccion">
 
       <h2>
-        Deportes de nuestra zona
+        ⚽ Fútbol
       </h2>
 
       <p>
-        Resultados, partidos, torneos,
-        equipos, clubes, atletas y todas
-        las novedades deportivas de la región.
+        Noticias, resultados, partidos,
+        protagonistas y actualidad del
+        fútbol nacional e internacional.
       </p>
 
-    </article>
+      <div class="subcategorias">
+
+        <a class="subcategoria"
+           href="#">
+
+          <span class="icono">
+            🇦🇷
+          </span>
+
+          <span>
+            Fútbol nacional
+          </span>
+
+        </a>
 
 
-    <section class="categorias">
+        <a class="subcategoria"
+           href="#">
+
+          <span class="icono">
+            🌎
+          </span>
+
+          <span>
+            Fútbol internacional
+          </span>
+
+        </a>
 
 
-      <article class="categoria">
+        <a class="subcategoria"
+           href="#">
 
-        <div class="icono">
-          ⚽
-        </div>
+          <span class="icono">
+            🇦🇷
+          </span>
 
-        <div>
+          <span>
+            Selecciones
+          </span>
 
-          <h2>
-            Fútbol
-          </h2>
+        </a>
 
-          <p>
-            Partidos, resultados, equipos,
-            torneos y noticias del fútbol local.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="categoria">
-
-        <div class="icono">
-          🏀
-        </div>
-
-        <div>
-
-          <h2>
-            Básquet
-          </h2>
-
-          <p>
-            Información de clubes, partidos
-            y competencias de básquet.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="categoria">
-
-        <div class="icono">
-          🏐
-        </div>
-
-        <div>
-
-          <h2>
-            Vóley
-          </h2>
-
-          <p>
-            Torneos, equipos y resultados
-            del vóley de la zona.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="categoria">
-
-        <div class="icono">
-          🏃
-        </div>
-
-        <div>
-
-          <h2>
-            Atletismo
-          </h2>
-
-          <p>
-            Carreras, competencias y atletas
-            de nuestra región.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="categoria">
-
-        <div class="icono">
-          🥋
-        </div>
-
-        <div>
-
-          <h2>
-            Artes marciales
-          </h2>
-
-          <p>
-            Competencias, escuelas y deportistas
-            de distintas disciplinas.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="categoria">
-
-        <div class="icono">
-          🏇
-        </div>
-
-        <div>
-
-          <h2>
-            Deportes ecuestres
-          </h2>
-
-          <p>
-            Polo, equitación y actividades
-            ecuestres de la zona.
-          </p>
-
-        </div>
-
-      </article>
-
+      </div>
 
     </section>
 
+
+    <!-- AUTOMOVILISMO -->
+
+    <section class="seccion automovilismo">
+
+      <h2>
+        🏎️ Automovilismo
+      </h2>
+
+      <p>
+        Información, resultados y novedades
+        del mundo del automovilismo.
+      </p>
+
+      <div class="subcategorias">
+
+        <a class="subcategoria"
+           href="#">
+
+          <span class="icono">
+            🏁
+          </span>
+
+          <span>
+            Automovilismo
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FÓRMULA 1 -->
+
+    <section class="seccion formula1">
+
+      <h2>
+        🏁 Fórmula 1
+      </h2>
+
+      <p>
+        Noticias, carreras, clasificación,
+        pilotos, equipos y actualidad de
+        la Fórmula 1.
+      </p>
+
+      <div class="subcategorias">
+
+        <a class="subcategoria"
+           href="#">
+
+          <span class="icono">
+            🏎️
+          </span>
+
+          <span>
+            Fórmula 1
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRÓXIMAMENTE -->
 
     <section class="proximamente">
 
-      <div class="proximamente-icono">
-        🏆
-      </div>
-
-      <h3>
-        Próximamente más información
-      </h3>
+      <h2>
+        📰 Más información próximamente
+      </h2>
 
       <p>
-        Las noticias y resultados deportivos
-        aparecerán aquí.
+        Estamos preparando nuevas noticias
+        y contenidos deportivos para InfoZonal.
       </p>
 
     </section>
-
 
   </main>
 
 
+  <!-- PIE -->
+
   <footer>
 
+    <strong>INFOZONAL</strong><br>
+
     © 2026 InfoZonal<br>
+
     San Andrés de Giles y zona
 
   </footer>
 
 
 </body>
-
-  </html>
+</html>
