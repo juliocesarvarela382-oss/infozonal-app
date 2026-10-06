@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luján - InfoZonal</title>
+
+  <title>Luján | InfoZonal</title>
 
   <style>
     * {
@@ -13,7 +14,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
+      background: #eef3f8;
       color: #111;
     }
 
@@ -33,11 +34,12 @@
 
     h1 {
       margin: 5px 0;
-      font-size: 27px;
+      font-size: 28px;
     }
 
     header p {
       margin: 8px 0 0;
+      font-size: 18px;
     }
 
     main {
@@ -48,15 +50,105 @@
 
     .card {
       background: white;
-      border-radius: 15px;
+      border-radius: 16px;
       padding: 20px;
       margin-bottom: 15px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .card h2 {
-      margin-top: 0;
       color: #071d3a;
+      margin-top: 0;
+    }
+
+    .temperature {
+      text-align: center;
+      font-size: 52px;
+      font-weight: bold;
+      color: #071d3a;
+      margin: 15px 0;
+    }
+
+    .estado {
+      text-align: center;
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .dato {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid #e1e5e9;
+      font-size: 17px;
+    }
+
+    .dato:last-child {
+      border-bottom: none;
+    }
+
+    .actualizado {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .pronostico-titulo {
+      text-align: center;
+      color: #071d3a;
+      margin-bottom: 18px;
+    }
+
+    .dia {
+      border: 1px solid #e1e5e9;
+      border-radius: 14px;
+      padding: 15px;
+      margin-bottom: 12px;
+      background: #f9fbfd;
+    }
+
+    .dia-nombre {
+      font-size: 19px;
+      font-weight: bold;
+      color: #071d3a;
+      margin-bottom: 8px;
+    }
+
+    .dia-clima {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .temperaturas {
+      display: flex;
+      justify-content: space-around;
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    .maxima {
+      font-weight: bold;
+    }
+
+    .minima {
+      color: #555;
+    }
+
+    .precipitacion-dia {
+      text-align: center;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .fuente {
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+      margin-top: 20px;
     }
 
     .back {
@@ -77,60 +169,592 @@
       color: #666;
       font-size: 14px;
     }
+
+    #error {
+      display: none;
+      text-align: center;
+      color: #b00020;
+      font-weight: bold;
+      padding: 10px;
+    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="infozonal-logo-1.png" alt="Logo InfoZonal" class="logo">
+<header>
 
-    <h1>📍 Luján</h1>
+  <img
+    src="infozonal-logo-1.png"
+    alt="Logo InfoZonal"
+    class="logo"
+  >
 
-    <p>Noticias de InfoZonal</p>
-  </header>
+  <h1>📍 Luján</h1>
 
-  <main>
+  <p>Noticias de InfoZonal</p>
 
-    <div class="card">
-      <h2>📰 Noticias de Luján</h2>
-      <p>
-        En esta sección encontrarás las principales noticias,
-        información y acontecimientos de Luján.
-      </p>
+</header>
+
+
+<main>
+
+  <!-- NOTICIAS -->
+
+  <div class="card">
+
+    <h2>📰 Noticias de Luján</h2>
+
+    <p>
+      En esta sección encontrarás las principales noticias,
+      información y acontecimientos de Luján.
+    </p>
+
+  </div>
+
+
+  <!-- POLICIALES -->
+
+  <div class="card">
+
+    <h2>🚔 Policiales</h2>
+
+    <p>
+      Información policial y judicial de Luján.
+    </p>
+
+  </div>
+
+
+  <!-- BOMBEROS -->
+
+  <div class="card">
+
+    <h2>🚒 Bomberos</h2>
+
+    <p>
+      Servicios y novedades de Bomberos Voluntarios.
+    </p>
+
+  </div>
+
+
+  <!-- CLIMA -->
+
+  <div class="card">
+
+    <h2>🌦️ Clima de Luján</h2>
+
+    <div id="cargando">
+      ⏳ Cargando información meteorológica...
     </div>
 
-    <div class="card">
-      <h2>🚔 Policiales</h2>
-      <p>
-        Información policial y judicial de Luján.
-      </p>
+    <div id="clima" style="display:none;">
+
+      <div
+        class="temperature"
+        id="temperatura">
+        --
+      </div>
+
+      <div
+        class="estado"
+        id="estado">
+        --
+      </div>
+
+      <div class="dato">
+        <span>🌡️ Sensación térmica</span>
+        <strong id="sensacion">--</strong>
+      </div>
+
+      <div class="dato">
+        <span>💧 Humedad</span>
+        <strong id="humedad">--</strong>
+      </div>
+
+      <div class="dato">
+        <span>💨 Viento</span>
+        <strong id="viento">--</strong>
+      </div>
+
+      <div class="dato">
+        <span>🌧️ Precipitación</span>
+        <strong id="precipitacion">--</strong>
+      </div>
+
+      <div
+        class="actualizado"
+        id="actualizado">
+        --
+      </div>
+
     </div>
 
-    <div class="card">
-      <h2>🚒 Bomberos</h2>
-      <p>
-        Servicios y novedades de Bomberos Voluntarios.
-      </p>
+    <div id="error">
+      ⚠️ No se pudieron cargar los datos del clima.
     </div>
 
-    <div class="card">
-      <h2>🌦️ Clima</h2>
-      <p>
-        Información meteorológica y alertas para Luján.
-      </p>
+  </div>
+
+
+  <!-- PRONÓSTICO -->
+
+  <div class="card">
+
+    <h2 class="pronostico-titulo">
+      📅 Pronóstico de Luján
+    </h2>
+
+    <div id="pronostico-cargando">
+      ⏳ Cargando pronóstico...
     </div>
 
-    <a class="back" href="index.html">
-      ← Volver a InfoZonal
-    </a>
+    <div
+      id="pronostico"
+      style="display:none;">
 
-  </main>
+      <div class="dia">
 
-  <footer>
-    © 2026 InfoZonal<br>
-    San Andrés de Giles y zona
-  </footer>
+        <div
+          class="dia-nombre"
+          id="dia1">
+          --
+        </div>
+
+        <div
+          class="dia-clima"
+          id="clima1">
+          --
+        </div>
+
+        <div class="temperaturas">
+
+          <span class="maxima">
+            🌡️ Máx.
+            <span id="max1">--</span>
+          </span>
+
+          <span class="minima">
+            ❄️ Mín.
+            <span id="min1">--</span>
+          </span>
+
+        </div>
+
+        <div class="precipitacion-dia">
+
+          🌧️ Precipitación:
+          <span id="lluvia1">--</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="dia">
+
+        <div
+          class="dia-nombre"
+          id="dia2">
+          --
+        </div>
+
+        <div
+          class="dia-clima"
+          id="clima2">
+          --
+        </div>
+
+        <div class="temperaturas">
+
+          <span class="maxima">
+            🌡️ Máx.
+            <span id="max2">--</span>
+          </span>
+
+          <span class="minima">
+            ❄️ Mín.
+            <span id="min2">--</span>
+          </span>
+
+        </div>
+
+        <div class="precipitacion-dia">
+
+          🌧️ Precipitación:
+          <span id="lluvia2">--</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="dia">
+
+        <div
+          class="dia-nombre"
+          id="dia3">
+          --
+        </div>
+
+        <div
+          class="dia-clima"
+          id="clima3">
+          --
+        </div>
+
+        <div class="temperaturas">
+
+          <span class="maxima">
+            🌡️ Máx.
+            <span id="max3">--</span>
+          </span>
+
+          <span class="minima">
+            ❄️ Mín.
+            <span id="min3">--</span>
+          </span>
+
+        </div>
+
+        <div class="precipitacion-dia">
+
+          🌧️ Precipitación:
+          <span id="lluvia3">--</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FUENTE -->
+
+  <div class="card">
+
+    <h2>ℹ️ Fuente</h2>
+
+    <p>
+      Datos meteorológicos actualizados automáticamente.
+    </p>
+
+    <div class="fuente">
+      Fuente meteorológica: Open-Meteo
+    </div>
+
+  </div>
+
+
+  <a
+    href="index.html"
+    class="back">
+    ⬅️ Volver a InfoZonal
+  </a>
+
+</main>
+
+
+<footer>
+
+  © 2026 InfoZonal<br>
+  San Andrés de Giles y zona
+
+</footer>
+
+
+<script>
+
+  /*
+    Coordenadas de Luján, Buenos Aires
+    Datos meteorológicos mediante Open-Meteo.
+  */
+
+  const url =
+    "https://api.open-meteo.com/v1/forecast" +
+    "?latitude=-34.57028" +
+    "&longitude=-59.10500" +
+    "&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,weather_code" +
+    "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum" +
+    "&timezone=America%2FArgentina%2FBuenos_Aires" +
+    "&forecast_days=3";
+
+
+  function descripcionClima(codigo) {
+
+    if (codigo === 0)
+      return "☀️ Despejado";
+
+    if (codigo === 1)
+      return "🌤️ Principalmente despejado";
+
+    if (codigo === 2)
+      return "⛅ Parcialmente nublado";
+
+    if (codigo === 3)
+      return "☁️ Nublado";
+
+    if (codigo === 45 || codigo === 48)
+      return "🌫️ Neblina";
+
+    if (codigo >= 51 && codigo <= 55)
+      return "🌦️ Llovizna";
+
+    if (codigo >= 56 && codigo <= 57)
+      return "🌧️ Llovizna helada";
+
+    if (codigo >= 61 && codigo <= 65)
+      return "🌧️ Lluvia";
+
+    if (codigo >= 66 && codigo <= 67)
+      return "🌧️ Lluvia helada";
+
+    if (codigo >= 71 && codigo <= 77)
+      return "❄️ Nieve";
+
+    if (codigo >= 80 && codigo <= 82)
+      return "🌦️ Chaparrones";
+
+    if (codigo >= 85 && codigo <= 86)
+      return "🌨️ Chaparrones de nieve";
+
+    if (codigo >= 95 && codigo <= 99)
+      return "⛈️ Tormenta";
+
+    return "🌥️ Variable";
+  }
+
+
+  function nombreDia(fecha, posicion) {
+
+    if (posicion === 0)
+      return "Hoy";
+
+    const dias = [
+      "Domingo",
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado"
+    ];
+
+    const fechaLocal =
+      new Date(fecha + "T12:00:00");
+
+    return dias[fechaLocal.getDay()];
+  }
+
+
+  async function cargarClima() {
+
+    try {
+
+      const respuesta =
+        await fetch(url);
+
+      if (!respuesta.ok) {
+
+        throw new Error(
+          "Error en la fuente meteorológica"
+        );
+
+      }
+
+      const datos =
+        await respuesta.json();
+
+      const actual =
+        datos.current;
+
+      const diario =
+        datos.daily;
+
+
+      /*
+        CLIMA ACTUAL
+      */
+
+      document.getElementById(
+        "temperatura"
+      ).textContent =
+        actual.temperature_2m.toFixed(1) +
+        " °C";
+
+
+      document.getElementById(
+        "estado"
+      ).textContent =
+        descripcionClima(
+          actual.weather_code
+        );
+
+
+      document.getElementById(
+        "sensacion"
+      ).textContent =
+        actual.apparent_temperature.toFixed(1) +
+        " °C";
+
+
+      document.getElementById(
+        "humedad"
+      ).textContent =
+        actual.relative_humidity_2m +
+        " %";
+
+
+      document.getElementById(
+        "viento"
+      ).textContent =
+        actual.wind_speed_10m.toFixed(1) +
+        " km/h";
+
+
+      document.getElementById(
+        "precipitacion"
+      ).textContent =
+        actual.precipitation.toFixed(2) +
+        " mm";
+
+
+      /*
+        HORA DE ACTUALIZACIÓN
+      */
+
+      const fecha =
+        new Date(actual.time);
+
+      document.getElementById(
+        "actualizado"
+      ).textContent =
+        "Actualizado: " +
+        fecha.toLocaleString(
+          "es-AR",
+          {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+          }
+        );
+
+
+      document.getElementById(
+        "cargando"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "clima"
+      ).style.display = "block";
+
+
+      /*
+        PRONÓSTICO
+      */
+
+      for (let i = 0; i < 3; i++) {
+
+        const numero = i + 1;
+
+
+        document.getElementById(
+          "dia" + numero
+        ).textContent =
+          nombreDia(
+            diario.time[i],
+            i
+          ) +
+          " · " +
+          new Date(
+            diario.time[i] +
+            "T12:00:00"
+          ).toLocaleDateString(
+            "es-AR",
+            {
+              day: "2-digit",
+              month: "2-digit"
+            }
+          );
+
+
+        document.getElementById(
+          "clima" + numero
+        ).textContent =
+          descripcionClima(
+            diario.weather_code[i]
+          );
+
+
+        document.getElementById(
+          "max" + numero
+        ).textContent =
+          diario.temperature_2m_max[i]
+            .toFixed(1) +
+          " °C";
+
+
+        document.getElementById(
+          "min" + numero
+        ).textContent =
+          diario.temperature_2m_min[i]
+            .toFixed(1) +
+          " °C";
+
+
+        document.getElementById(
+          "lluvia" + numero
+        ).textContent =
+          diario.precipitation_sum[i]
+            .toFixed(1) +
+          " mm";
+
+      }
+
+
+      document.getElementById(
+        "pronostico-cargando"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "pronostico"
+      ).style.display = "block";
+
+
+    } catch (error) {
+
+      console.error(error);
+
+
+      document.getElementById(
+        "cargando"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "pronostico-cargando"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "error"
+      ).style.display = "block";
+
+    }
+
+  }
+
+
+  cargarClima();
+
+</script>
 
 </body>
 </html>
