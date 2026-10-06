@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>San Andrés de Giles - InfoZonal</title>
 
   <style>
@@ -46,7 +47,12 @@
       padding: 20px 15px;
     }
 
-    .card {
+    .section-title {
+      color: #071d3a;
+      margin-bottom: 15px;
+    }
+
+    .news {
       background: white;
       border-radius: 15px;
       padding: 20px;
@@ -54,9 +60,24 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .card h2 {
+    .news h2 {
       margin-top: 0;
       color: #071d3a;
+      font-size: 21px;
+    }
+
+    .news p {
+      line-height: 1.5;
+    }
+
+    .category {
+      display: inline-block;
+      background: #071d3a;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 10px;
     }
 
     .back {
@@ -68,7 +89,7 @@
       padding: 15px;
       border-radius: 12px;
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     footer {
@@ -84,7 +105,11 @@
 
   <header>
 
-    <img src="infozonal-logo-1.png" alt="Logo InfoZonal" class="logo">
+    <img
+      src="infozonal-logo-1.png"
+      alt="Logo InfoZonal"
+      class="logo"
+    >
 
     <h1>📍 San Andrés de Giles</h1>
 
@@ -94,20 +119,28 @@
 
   <main>
 
-    <div class="card">
+    <h2 class="section-title">
+      📰 Últimas noticias de San Andrés de Giles
+    </h2>
 
-      <h2>📰 Noticias de San Andrés de Giles</h2>
+    <div class="news">
+
+      <span class="category">📍 Giles</span>
+
+      <h2>Información local</h2>
 
       <p>
-        En esta sección encontrarás las principales noticias,
-        información y acontecimientos de San Andrés de Giles.
+        En este espacio se publicarán las últimas noticias,
+        acontecimientos y novedades de San Andrés de Giles.
       </p>
 
     </div>
 
-    <div class="card">
+    <div class="news">
 
-      <h2>🚔 Policiales</h2>
+      <span class="category">🚔 Policiales</span>
+
+      <h2>Noticias policiales</h2>
 
       <p>
         Información policial y judicial de San Andrés de Giles.
@@ -115,22 +148,28 @@
 
     </div>
 
-    <div class="card">
+    <div class="news">
 
-      <h2>🚒 Bomberos</h2>
+      <span class="category">🚒 Bomberos</span>
+
+      <h2>Bomberos Voluntarios</h2>
 
       <p>
-        Servicios y novedades de Bomberos Voluntarios.
+        Información sobre incendios, accidentes,
+        rescates y servicios de Bomberos.
       </p>
 
     </div>
 
-    <div class="card">
+    <div class="news">
 
-      <h2>🌦️ Clima</h2>
+      <span class="category">🌦️ Clima</span>
+
+      <h2>El tiempo en Giles</h2>
 
       <p>
-        Información meteorológica y alertas para San Andrés de Giles.
+        Información meteorológica, temperaturas,
+        lluvias y alertas para San Andrés de Giles.
       </p>
 
     </div>
@@ -142,8 +181,10 @@
   </main>
 
   <footer>
+
     © 2026 InfoZonal<br>
     San Andrés de Giles y zona
+
   </footer>
 
 </body>
