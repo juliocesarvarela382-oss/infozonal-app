@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Clima San Andrés de Giles - InfoZonal</title>
+  <title>San Andrés de Giles - InfoZonal</title>
 
   <style>
     * {
@@ -14,7 +13,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #eef3f8;
+      background: #f4f6f8;
       color: #111;
     }
 
@@ -34,7 +33,7 @@
 
     h1 {
       margin: 5px 0;
-      font-size: 26px;
+      font-size: 27px;
     }
 
     header p {
@@ -49,81 +48,34 @@
 
     .card {
       background: white;
-      border-radius: 16px;
+      border-radius: 15px;
       padding: 20px;
       margin-bottom: 15px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .actual {
-      text-align: center;
-    }
-
-    .temperature {
-      font-size: 52px;
-      font-weight: bold;
+    .card h2 {
+      margin-top: 0;
       color: #071d3a;
-      margin: 10px 0;
     }
 
-    .estado {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .datos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .dato {
-      background: #f4f6f8;
-      border-radius: 12px;
+    .button {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #071d3a;
+      color: white;
       padding: 15px;
-      text-align: center;
-    }
-
-    .dato strong {
-      display: block;
-      font-size: 20px;
-      color: #071d3a;
-      margin-top: 5px;
-    }
-
-    .pronostico {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .dia {
-      background: #f4f6f8;
       border-radius: 12px;
-      padding: 12px 6px;
-      text-align: center;
+      font-weight: bold;
+      margin-top: 12px;
     }
 
-    .dia strong {
-      display: block;
-      color: #071d3a;
-      margin-bottom: 8px;
+    .button:hover {
+      background: #123b6d;
     }
 
-    .icono {
-      font-size: 30px;
-      margin: 5px 0;
-    }
-
-    .fuente {
-      text-align: center;
-      color: #666;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .volver {
+    .back {
       display: block;
       text-align: center;
       text-decoration: none;
@@ -135,24 +87,11 @@
       margin-top: 20px;
     }
 
-    .cargando {
+    footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px 15px;
       color: #666;
-    }
-
-    .error {
-      background: #fff0f0;
-      color: #a00000;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-    }
-
-    @media (max-width: 500px) {
-      .pronostico {
-        grid-template-columns: 1fr;
-      }
+      font-size: 14px;
     }
   </style>
 </head>
@@ -160,267 +99,74 @@
 <body>
 
   <header>
+    <img src="infozonal-logo-1.png" alt="Logo InfoZonal" class="logo">
 
-    <img
-      src="infozonal-logo-1.png"
-      alt="Logo InfoZonal"
-      class="logo"
-    >
+    <h1>📍 San Andrés de Giles</h1>
 
-    <h1>🌦️ Clima</h1>
-
-    <p>San Andrés de Giles</p>
-
+    <p>Noticias de InfoZonal</p>
   </header>
 
   <main>
 
-    <div class="card actual">
-
-      <h2>🌡️ Condiciones actuales</h2>
-
-      <div id="temperatura" class="temperature">
-        --
-      </div>
-
-      <div id="estado" class="estado">
-        Cargando...
-      </div>
-
-      <div class="datos">
-
-        <div class="dato">
-          🤗 Sensación
-          <strong id="sensacion">--</strong>
-        </div>
-
-        <div class="dato">
-          💧 Humedad
-          <strong id="humedad">--</strong>
-        </div>
-
-        <div class="dato">
-          💨 Viento
-          <strong id="viento">--</strong>
-        </div>
-
-        <div class="dato">
-          🌧️ Precipitación
-          <strong id="lluvia">--</strong>
-        </div>
-
-      </div>
-
-    </div>
-
     <div class="card">
+      <h2>📰 Últimas noticias de San Andrés de Giles</h2>
 
-      <h2>📅 Pronóstico</h2>
-
-      <div id="pronostico" class="pronostico">
-
-        <div class="cargando">
-          Cargando pronóstico...
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="card">
-
-      <p class="fuente">
-
-        Datos meteorológicos actualizados automáticamente.<br><br>
-
-        🌐 Fuente: Open-Meteo<br>
-        ⚠️ Para alertas oficiales consultar al
-        Servicio Meteorológico Nacional.
-
+      <p>
+        Toda la información de San Andrés de Giles y zona,
+        actualizada por InfoZonal.
       </p>
 
+      <a href="noticia-giles.html" class="button">
+        📰 Ver noticias de Giles
+      </a>
     </div>
 
-    <a class="volver" href="index.html">
-      ← Volver a InfoZonal
+    <div class="card">
+      <h2>🚔 Policiales</h2>
+
+      <p>
+        Noticias policiales, hechos y novedades de San Andrés de Giles.
+      </p>
+
+      <a href="policiales.html" class="button">
+        🚔 Ver policiales
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>🚒 Bomberos</h2>
+
+      <p>
+        Incendios, accidentes, rescates y emergencias.
+      </p>
+
+      <a href="bomberos.html" class="button">
+        🚒 Ver noticias de Bomberos
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>🌦️ Clima</h2>
+
+      <p>
+        Información meteorológica para San Andrés de Giles.
+      </p>
+
+      <a href="clima.html" class="button">
+        🌦️ Ver clima
+      </a>
+    </div>
+
+    <a href="index.html" class="back">
+      ⬅️ Volver a InfoZonal
     </a>
 
   </main>
 
-  <script>
-
-    const url =
-      "https://api.open-meteo.com/v1/forecast" +
-      "?latitude=-34.4428" +
-      "&longitude=-59.4442" +
-      "&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,weather_code" +
-      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum" +
-      "&timezone=America%2FArgentina%2FBuenos_Aires" +
-      "&forecast_days=3";
-
-    function estadoClima(codigo) {
-
-      if (codigo === 0) return "☀️ Despejado";
-
-      if (codigo === 1) return "🌤️ Mayormente despejado";
-
-      if (codigo === 2) return "⛅ Parcialmente nublado";
-
-      if (codigo === 3) return "☁️ Nublado";
-
-      if ([45, 48].includes(codigo))
-        return "🌫️ Neblina";
-
-      if ([51, 53, 55].includes(codigo))
-        return "🌦️ Llovizna";
-
-      if ([61, 63, 65].includes(codigo))
-        return "🌧️ Lluvia";
-
-      if ([71, 73, 75].includes(codigo))
-        return "❄️ Nieve";
-
-      if ([80, 81, 82].includes(codigo))
-        return "🌦️ Chaparrones";
-
-      if ([95, 96, 99].includes(codigo))
-        return "⛈️ Tormenta";
-
-      return "🌡️ Condiciones variables";
-    }
-
-    function iconoClima(codigo) {
-
-      if (codigo === 0) return "☀️";
-
-      if ([1, 2].includes(codigo)) return "🌤️";
-
-      if (codigo === 3) return "☁️";
-
-      if ([45, 48].includes(codigo)) return "🌫️";
-
-      if ([51, 53, 55, 80, 81, 82].includes(codigo))
-        return "🌦️";
-
-      if ([61, 63, 65].includes(codigo))
-        return "🌧️";
-
-      if ([95, 96, 99].includes(codigo))
-        return "⛈️";
-
-      return "🌡️";
-    }
-
-    function nombreDia(fecha, indice) {
-
-      if (indice === 0) return "Hoy";
-
-      if (indice === 1) return "Mañana";
-
-      const dias = [
-        "Domingo",
-        "Lunes",
-        "Martes",
-        "Miércoles",
-        "Jueves",
-        "Viernes",
-        "Sábado"
-      ];
-
-      const fechaObj = new Date(fecha + "T12:00:00");
-
-      return dias[fechaObj.getDay()];
-    }
-
-    async function cargarClima() {
-
-      try {
-
-        const respuesta = await fetch(url);
-
-        if (!respuesta.ok) {
-          throw new Error("No se pudo obtener el clima");
-        }
-
-        const datos = await respuesta.json();
-
-        const actual = datos.current;
-
-        document.getElementById("temperatura").textContent =
-          Math.round(actual.temperature_2m) + " °C";
-
-        document.getElementById("estado").textContent =
-          estadoClima(actual.weather_code);
-
-        document.getElementById("sensacion").textContent =
-          Math.round(actual.apparent_temperature) + " °C";
-
-        document.getElementById("humedad").textContent =
-          actual.relative_humidity_2m + " %";
-
-        document.getElementById("viento").textContent =
-          Math.round(actual.wind_speed_10m) + " km/h";
-
-        document.getElementById("lluvia").textContent =
-          actual.precipitation + " mm";
-
-        let html = "";
-
-        for (let i = 0; i < 3; i++) {
-
-          html += `
-            <div class="dia">
-
-              <strong>
-                ${nombreDia(datos.daily.time[i], i)}
-              </strong>
-
-              <div class="icono">
-                ${iconoClima(datos.daily.weather_code[i])}
-              </div>
-
-              <div>
-                Máx. ${Math.round(
-                  datos.daily.temperature_2m_max[i]
-                )} °C
-              </div>
-
-              <div>
-                Mín. ${Math.round(
-                  datos.daily.temperature_2m_min[i]
-                )} °C
-              </div>
-
-              <div>
-                🌧️ ${datos.daily.precipitation_sum[i]} mm
-              </div>
-
-            </div>
-          `;
-        }
-
-        document.getElementById("pronostico").innerHTML = html;
-
-      } catch (error) {
-
-        document.getElementById("estado").textContent =
-          "No se pudo actualizar";
-
-        document.getElementById("pronostico").innerHTML = `
-          <div class="error">
-            No se pudieron cargar los datos meteorológicos.
-            <br><br>
-            Revisá tu conexión a Internet e intentá nuevamente.
-          </div>
-        `;
-
-      }
-
-    }
-
-    cargarClima();
-
-  </script>
+  <footer>
+    © 2026 InfoZonal<br>
+    San Andrés de Giles y zona
+  </footer>
 
 </body>
 </html>
